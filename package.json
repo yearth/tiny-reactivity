@@ -1,0 +1,9 @@
+{
+  "name": "tiny-reactivity",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@vue/reactivity": "^3.2.23"
+  }
+}
