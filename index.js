@@ -1,13 +1,16 @@
-const { reactive, effect } = require("@vue/reactivity");
+import { reactive, watchEffect } from "./core/reactivity/index.js";
 
-const a = reactive({
-  number: 10
+const user = reactive({
+  name: "Alex",
+  age: 18
 });
+
+// 开开脑洞，b 可以是任意东西，包括视图
 let b;
-
-effect(() => {
-  b = a.number + 10;
-  console.log(b);
+watchEffect(() => {
+  b = user.age * 2;
+  console.log("enter effect: name, b = double age", user.name, b);
 });
 
-a.number = 20;
+user.name = "alice";
+user.age = 20;
